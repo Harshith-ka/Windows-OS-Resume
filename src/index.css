@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Windows 11-Inspired Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* Desktop & Windows */
+    --desktop-bg: 210 100% 97%;
+    --desktop-pattern: 210 20% 95%;
+    
+    /* Windows 11 Blue Theme */
+    --win-blue: 211 100% 50%;
+    --win-blue-light: 211 100% 60%;
+    --win-blue-dark: 211 100% 40%;
+    
+    /* Glass Effect Colors */
+    --glass-bg: 0 0% 100%;
+    --glass-border: 210 20% 90%;
+    --glass-shadow: 210 20% 80%;
+    
+    /* Text Colors */
+    --text-primary: 210 20% 10%;
+    --text-secondary: 210 15% 40%;
+    --text-muted: 210 10% 60%;
+    
+    /* UI Elements */
+    --taskbar-bg: 0 0% 100%;
+    --taskbar-border: 210 20% 90%;
+    --window-bg: 0 0% 100%;
+    --window-title-bg: 0 0% 98%;
+    
+    /* Accent Colors */
+    --accent-success: 142 76% 36%;
+    --accent-warning: 38 92% 50%;
+    --accent-error: 0 72% 51%;
+    
+    /* Standard shadcn tokens */
+    --background: 0 0% 100%;
+    --foreground: 210 20% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 10%;
+    --primary: 211 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 210 20% 10%;
+    --muted: 210 20% 95%;
+    --muted-foreground: 210 15% 40%;
+    --accent: 211 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 211 100% 50%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark Desktop & Windows */
+    --desktop-bg: 220 15% 10%;
+    --desktop-pattern: 220 15% 12%;
+    
+    /* Windows 11 Dark Theme */
+    --win-blue: 211 100% 50%;
+    --win-blue-light: 211 100% 60%;
+    --win-blue-dark: 211 100% 40%;
+    
+    /* Dark Glass Effect */
+    --glass-bg: 220 15% 15%;
+    --glass-border: 220 15% 25%;
+    --glass-shadow: 220 15% 5%;
+    
+    /* Dark Text Colors */
+    --text-primary: 0 0% 95%;
+    --text-secondary: 0 0% 70%;
+    --text-muted: 0 0% 50%;
+    
+    /* Dark UI Elements */
+    --taskbar-bg: 220 15% 12%;
+    --taskbar-border: 220 15% 20%;
+    --window-bg: 220 15% 15%;
+    --window-title-bg: 220 15% 12%;
+    
+    /* Accent Colors */
+    --accent-success: 142 76% 46%;
+    --accent-warning: 38 92% 60%;
+    --accent-error: 0 72% 61%;
+    
+    /* Dark shadcn tokens */
+    --background: 220 15% 10%;
+    --foreground: 0 0% 95%;
+    --card: 220 15% 15%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 15% 15%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 211 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 211 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 61%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 211 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-hidden;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+
+  .font-handwriting {
+    font-family: 'Comic Sans MS', 'Marker Felt', cursive;
+  }
+}
+
+@layer utilities {
+  /* Glass Effect */
+  .glass {
+    background: hsl(var(--glass-bg) / 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border) / 0.3);
+    box-shadow: 0 8px 32px 0 hsl(var(--glass-shadow) / 0.1);
+  }
+  
+  .glass-strong {
+    background: hsl(var(--glass-bg) / 0.9);
+    backdrop-filter: blur(30px);
+    border: 1px solid hsl(var(--glass-border) / 0.5);
+    box-shadow: 0 8px 32px 0 hsl(var(--glass-shadow) / 0.2);
+  }
+  
+  /* Taskbar Styles */
+  .taskbar {
+    background: hsl(var(--taskbar-bg) / 0.9);
+    backdrop-filter: blur(40px);
+    border-top: 1px solid hsl(var(--taskbar-border) / 0.3);
+    box-shadow: 0 -2px 20px 0 hsl(var(--glass-shadow) / 0.1);
+  }
+  
+  /* Window Styles */
+  .window {
+    background: hsl(var(--window-bg));
+    border: 1px solid hsl(var(--glass-border) / 0.5);
+    box-shadow: 0 20px 60px 0 hsl(var(--glass-shadow) / 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .window-title-bar {
+    background: hsl(var(--window-title-bg));
+    border-bottom: 1px solid hsl(var(--glass-border) / 0.3);
+  }
+  
+  /* Desktop Icon Styles */
+  .desktop-icon {
+    @apply transition-all duration-200 ease-out;
+  }
+  
+  .desktop-icon:hover {
+    @apply scale-105;
+  }
+  
+  .desktop-icon:active {
+    @apply scale-95;
+  }
+  
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Hide Scrollbar but keep functionality */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
