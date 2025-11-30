@@ -58,7 +58,7 @@ A fully interactive React.js personal resume website that emulates a modern Wind
 
 🛠️ Tech Stack
 
-🔥 Frontend: React 18 + Vite + Tailwind CSS
+🔥 Frontend: React 18 + Next Js + Vite + Tailwind CSS
 
 🎭 Animations: Framer Motion
 
